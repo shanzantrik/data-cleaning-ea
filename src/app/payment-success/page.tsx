@@ -1,19 +1,24 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { FaCheckCircle } from 'react-icons/fa';
 
-export default function PaymentSuccess() {
+export default function PaymentSuccessPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <PaymentSuccess />
+    </Suspense>
+  );
+}
+
+function PaymentSuccess() {
   const [status, setStatus] = useState<'processing' | 'succeeded' | 'failed'>('processing');
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const payment_intent = searchParams.get('payment_intent');
-    const payment_intent_client_secret = searchParams.get('payment_intent_client_secret');
     const redirect_status = searchParams.get('redirect_status');
-
     if (redirect_status === 'succeeded') {
       setStatus('succeeded');
     } else {
@@ -37,7 +42,7 @@ export default function PaymentSuccess() {
             <FaCheckCircle className="text-[#dc1b36] text-6xl mx-auto" />
             <h1 className="text-2xl font-bold mt-4">Payment Successful!</h1>
             <p className="text-gray-600 mt-2">
-              Thank you for your payment. We'll start processing your data cleaning request right away.
+              Thank you for your payment. We&apos;ll start processing your data cleaning request right away.
             </p>
             <Link
               href="/"
@@ -53,7 +58,7 @@ export default function PaymentSuccess() {
             <div className="text-red-500 text-6xl mx-auto">×</div>
             <h1 className="text-2xl font-bold mt-4">Payment Failed</h1>
             <p className="text-gray-600 mt-2">
-              We couldn't process your payment. Please try again or contact support.
+              We couldn&apos;t process your payment. Please try again or contact support.
             </p>
             <Link
               href="/"

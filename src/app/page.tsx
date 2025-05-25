@@ -438,7 +438,7 @@ export default function Home() {
                     </div>
                     <div className="w-full mt-auto">
                       {item.img ? (
-          <Image
+                        <Image
                           src={item.img}
                           alt={item.title || 'Data Cleaning'}
                           width={400}
@@ -571,13 +571,16 @@ function VideoModalTrigger() {
   return (
     <>
       <div className="relative w-full max-w-3xl mx-auto cursor-pointer group mb-2" onClick={() => setOpen(true)}>
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
           alt="Data analytics dashboard preview"
+          width={1200}
+          height={420}
           className="rounded-2xl shadow-lg w-full h-[420px] object-cover object-center"
+          priority
         />
         <span className="absolute inset-0 flex items-center justify-center">
-          <FaPlay className="text-[#dc1b36] text-6xl animate-pulse drop-shadow-lg group-hover:scale-110 transition-transform" style={{ filter: 'drop-shadow(0 0 16px #dc1b36)' }} />
+          <FaPlay className="text-[#dc1b36] text-6xl animate-pulse drop-shadow-lg group-hover:scale-110 transition-transform" style={{ filter: 'drop-shadow(0 0 16px #dc1b36)' }} aria-hidden="true" />
         </span>
       </div>
       {open && (
@@ -633,9 +636,11 @@ function TestimonialSlider({ autoScroll }: { autoScroll?: boolean }) {
   }, [autoScroll, testimonials.length]);
   return (
     <div className="w-full flex flex-col items-center">
-      <img
+      <Image
         src={testimonials[idx].img}
         alt={testimonials[idx].author}
+        width={64}
+        height={64}
         className="w-16 h-16 rounded-full object-cover mb-4 border-4 border-[#f5f6fa] shadow"
       />
       <blockquote className="italic text-xl text-gray-800 mb-4 min-h-[80px] transition-all duration-300">

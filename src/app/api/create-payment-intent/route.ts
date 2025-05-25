@@ -9,7 +9,7 @@ if (!stripeSecretKey) {
 
 // Initialize Stripe with validated key
 const stripe = new Stripe(stripeSecretKey, {
-  apiVersion: '2023-10-16' as any,
+  apiVersion: '2025-04-30.basil',
 });
 
 export async function POST() {
@@ -29,11 +29,19 @@ export async function POST() {
     return NextResponse.json({
       clientSecret: paymentIntent.client_secret,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    let message = 'Error creating payment intent';
+    let statusCode = 500;
+    if (error && typeof error === 'object' && error !== null && 'message' in error) {
+      message = (error as { message?: string }).message || message;
+    }
+    if (error && typeof error === 'object' && error !== null && 'statusCode' in error) {
+      statusCode = (error as { statusCode?: number }).statusCode || statusCode;
+    }
     console.error('Error creating payment intent:', error);
     return NextResponse.json(
-      { error: error.message || 'Error creating payment intent' },
-      { status: error.statusCode || 500 }
+      { error: message },
+      { status: statusCode }
     );
   }
 }
