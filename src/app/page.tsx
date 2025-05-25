@@ -6,6 +6,42 @@ import { FaGem, FaDatabase, FaCheckCircle, FaChartLine, FaFileAlt, FaSearch, FaS
 import { useState, useEffect } from 'react';
 import StripePaymentModal from '@/components/StripePaymentModal';
 
+function CookieConsent() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const consent = localStorage.getItem('cookie_consent');
+      if (!consent) setVisible(true);
+    }
+  }, []);
+  const accept = () => {
+    localStorage.setItem('cookie_consent', 'true');
+    setVisible(false);
+  };
+  if (!visible) return null;
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Cookie consent"
+      className="fixed bottom-0 left-0 w-full z-[100] flex justify-center items-end pointer-events-none"
+    >
+      <div className="pointer-events-auto bg-white text-[#18181b] shadow-xl rounded-t-2xl p-6 m-4 max-w-xl w-full flex flex-col md:flex-row items-center gap-4 border border-gray-200">
+        <span className="flex-1 text-sm" id="cookie-message">
+          We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="/privacy" className="underline text-[#dc1b36]" aria-label="Read our privacy policy">Learn more</a>.
+        </span>
+        <button
+          onClick={accept}
+          className="bg-[#dc1b36] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#a31225] transition-colors"
+          aria-label="Accept cookies"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
@@ -19,11 +55,12 @@ export default function Home() {
         isOpen={isPaymentModalOpen}
         onClose={() => setIsPaymentModalOpen(false)}
       />
+      <CookieConsent />
       {/* Hero Section */}
       <BackgroundVisuals />
-      <section id="hero" className="relative flex flex-col md:flex-row items-center justify-center min-h-[80vh] bg-[#f5f6fa] overflow-hidden">
+      <section id="hero" className="relative flex flex-col md:flex-row items-center justify-center min-h-[80vh] bg-[#f5f6fa] overflow-hidden" aria-labelledby="hero-heading">
         <div className="z-10 flex-1 flex flex-col justify-center items-start px-6 md:px-16 py-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#dc1b36] drop-shadow-lg">
+          <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 text-[#dc1b36] drop-shadow-lg">
             Still Manually Cleaning Data?
           </h1>
           <h2 className="text-2xl md:text-3xl mb-8 text-[#dc1b36] drop-shadow">
@@ -36,8 +73,9 @@ export default function Home() {
             <button
               onClick={handlePaymentClick}
               className="flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-[#dc1b36] focus:ring-offset-2"
+              aria-label="Claim your discount now"
             >
-              <FaGem className="text-white text-2xl animate-bounce" />
+              <FaGem className="text-white text-2xl animate-bounce" aria-hidden="true" />
               Claim Your Discount Now
             </button>
           </div>
@@ -50,6 +88,7 @@ export default function Home() {
             transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl rounded-2xl overflow-hidden border border-gray-200"
             style={{ width: '90%', maxWidth: 700, zIndex: 2 }}
+            aria-hidden="true"
           >
             <Image
               src="/data-cleaning-hero.webp"

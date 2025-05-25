@@ -70,10 +70,10 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="flex items-center space-x-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#dc1b36] hover:text-[#7a2323] text-2xl">
+          <a href="https://www.linkedin.com/company/express-analytics" target="_blank" rel="noopener noreferrer" className="text-[#dc1b36] hover:text-[#7a2323] text-2xl">
             <FaLinkedin />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#dc1b36] hover:text-[#7a2323] text-2xl">
+          <a href="https://x.com/ExpresAnalytics" target="_blank" rel="noopener noreferrer" className="text-[#dc1b36] hover:text-[#7a2323] text-2xl">
             <FaTwitter />
           </a>
         </div>

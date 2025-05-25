@@ -25,21 +25,18 @@ export default function Footer() {
             <p className="text-gray-200">300, Spectrum Centre Drive Suite 400,<br />Irvine, California – 92618</p>
             <p className="text-gray-400">info@expressanalytics.com</p>
           </div>
-          <div className="rounded-xl overflow-hidden shadow-lg border border-[#232326] w-full h-48">
-            {/* Free OpenStreetMap iframe with marker for Irvine, CA */}
-            <iframe
-              title="Express Analytics USA HQ Map"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
-              className="w-full h-full"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-117.749%2C33.650%2C-117.739%2C33.660&amp;layer=mapnik&amp;marker=33.655%2C-117.744"
-              style={{ minHeight: 180 }}
-            ></iframe>
-          </div>
+          <iframe
+            title="Express Analytics USA HQ Map"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight={0}
+            marginWidth={0}
+            className="w-full h-full"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-117.747174%2C33.652436%2C-117.741174%2C33.656436&layer=mapnik&marker=33.654436%2C-117.744174"
+            style={{ minHeight: 180 }}
+          ></iframe>
           <div>
             <h3 className="text-xl font-bold mb-2 text-[#dc1b36]">India Address (PUNE)</h3>
             <p className="text-gray-200">Workflo, Pride accord building, 2nd floor,<br />Opposite Symantec office, Baner road, Baner, Pune – 411045</p>
