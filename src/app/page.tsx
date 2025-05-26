@@ -303,15 +303,14 @@ export default function Home() {
               We&#39;ll not just &quot;clean&quot; your data, we&#39;ll refine it too.
             </p>
 
-            {/* Bento Grid - CrossBrand Style with How It Works inside */}
-            <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 mb-16">
+            {/* Bento Grid - 2 rows x 3 columns, all equal size */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               {[
                 {
                   title: "Data Deduplication",
                   desc: "Remove repeated entries that mess with analysis and campaign metrics.",
                   img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
                   color: "bg-white text-black",
-                  size: "md:col-span-3 lg:col-span-4 row-span-2",
                   icon: FaDatabase,
                   link: "#services"
                 },
@@ -320,7 +319,6 @@ export default function Home() {
                   desc: "Bring consistency to names, phone numbers, emails, dates; across records.",
                   img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
                   color: "bg-[#a259f7] text-white",
-                  size: "md:col-span-3 lg:col-span-4",
                   icon: FaCheckCircle,
                   link: "#services"
                 },
@@ -329,7 +327,6 @@ export default function Home() {
                   desc: "Use proven methods to fill in blanks intelligently, not randomly.",
                   img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
                   color: "bg-[#f72585] text-white",
-                  size: "md:col-span-3 lg:col-span-4",
                   icon: FaChartLine,
                   link: "#services"
                 },
@@ -338,7 +335,6 @@ export default function Home() {
                   desc: "You&#39;ll get a complete report showing what was fixed, cleaned, and enriched, transparency included.",
                   img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
                   color: "bg-black text-white",
-                  size: "md:col-span-6 lg:col-span-4",
                   icon: FaFileAlt,
                   link: "#services"
                 },
@@ -347,7 +343,6 @@ export default function Home() {
                   desc: "Fix spelling, punctuation, and field-level issues to make data analysis-ready.",
                   img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
                   color: "bg-[#b5179e] text-white",
-                  size: "md:col-span-6 lg:col-span-4",
                   icon: FaShieldAlt,
                   link: "#services"
                 },
@@ -356,99 +351,49 @@ export default function Home() {
                   desc: "Add missing demographic, firmographic, or geolocation data for better targeting.",
                   img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
                   color: "bg-[#4361ee] text-white",
-                  size: "md:col-span-6 lg:col-span-4",
                   icon: FaSearch,
                   link: "#services"
-                },
-                {
-                  howItWorks: true,
-                  color: "bg-gradient-to-br from-[#dc1b36] via-purple-600 to-[#4361ee] text-white",
-                  size: "md:col-span-6 lg:col-span-8 row-span-1",
                 }
               ].map((item, index) => (
-                item.howItWorks ? (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className={`relative rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between p-8 ${item.color} ${item.size}`}
-                    style={{ minHeight: '340px' }}
-                  >
-                    <h3 className="text-3xl font-bold mb-6 text-center md:text-left">How It Works</h3>
-                    <p className="text-lg mb-8 text-center md:text-left">
-                      You&#39;re 3 steps away from working with clean, reliable data -
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                      {[
-                        {
-                          icon: FaUpload,
-                          title: "Upload Your Dataset",
-                          desc: "We&#39;ll give you a dedicated SFTP link for secure data transfer."
-                        },
-                        {
-                          icon: FaCogs,
-                          title: "Let the Experts Take Over",
-                          desc: "Our team starts processing the moment your file lands in the vault. No waiting around."
-                        },
-                        {
-                          icon: FaDownload,
-                          title: "Get Clean Data in Under 2 Hours",
-                          desc: "You receive a fully-cleaned file plus a quality report, ready to plug into your workflows."
-                        }
-                      ].map((step, i) => (
-                        <div key={i} className="flex flex-col items-center text-center md:items-start md:text-left">
-                          <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-3">
-                            <step.icon className="text-white text-2xl" />
-                          </div>
-                          <h4 className="text-lg font-bold mb-1">{step.title}</h4>
-                          <p className="text-sm">{step.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className={`group relative rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col justify-between ${item.color} ${item.size}`}
-                    style={{ minHeight: '340px' }}
-                  >
-                    <div className="flex flex-col h-full p-6 pb-0">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white/20">
-                          {item.icon ? <item.icon className="text-2xl" /> : null}
-                        </div>
-                        <h3 className="text-2xl font-bold leading-tight flex-1">{item.title || ''}</h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`group relative rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col justify-between ${item.color}`}
+                  style={{ minHeight: '340px' }}
+                >
+                  <div className="flex flex-col h-full p-6 pb-0">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white/20">
+                        {item.icon ? <item.icon className="text-2xl" /> : null}
                       </div>
-                      <p className="mb-4 text-base font-medium flex-1">{item.desc}</p>
-                      {item.title === 'Data Deduplication' && (
-                        <button
-                          onClick={handlePaymentClick}
-                          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-6 py-3 rounded-lg text-base font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg mb-4"
-                        >
-                          <FaGem className="text-white text-xl animate-bounce" />
-                          <span>Start Deduplication</span>
-                        </button>
-                      )}
+                      <h3 className="text-2xl font-bold leading-tight flex-1">{item.title || ''}</h3>
                     </div>
-                    <div className="w-full mt-auto">
-                      {item.img ? (
-                        <Image
-                          src={item.img}
-                          alt={item.title || 'Data Cleaning'}
-                          width={400}
-                          height={item.title === 'Data Deduplication' ? 260 : 120}
-                          className={`w-full object-cover object-center rounded-b-2xl ${item.title === 'Data Deduplication' ? 'h-64' : 'h-32'}`}
-                        />
-                      ) : null}
-                    </div>
-                  </motion.div>
-                )
+                    <p className="mb-4 text-base font-medium flex-1">{item.desc}</p>
+                    {item.title === 'Data Deduplication' && (
+                      <button
+                        onClick={handlePaymentClick}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-6 py-3 rounded-lg text-base font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg mb-4"
+                      >
+                        <FaGem className="text-white text-xl animate-bounce" />
+                        <span>Start Deduplication</span>
+                      </button>
+                    )}
+                  </div>
+                  <div className="w-full mt-auto">
+                    {item.img ? (
+                      <Image
+                        src={item.img}
+                        alt={item.title || 'Data Cleaning'}
+                        width={400}
+                        height={120}
+                        className={`w-full object-cover object-center rounded-b-2xl h-32`}
+                      />
+                    ) : null}
+                  </div>
+                </motion.div>
               ))}
             </div>
 
@@ -467,6 +412,52 @@ export default function Home() {
                 <span>Let&#39;s Clean Your Data</span>
               </button>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How It Works Section (moved out of bento grid) */}
+      <section id="how-it-works" className="w-full py-24">
+        <div className="site-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="relative rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between p-8 bg-gradient-to-br from-[#dc1b36] via-purple-600 to-[#4361ee] text-white"
+            style={{ minHeight: '340px' }}
+          >
+            <h3 className="text-3xl font-bold mb-6 text-center md:text-left">How It Works</h3>
+            <p className="text-lg mb-8 text-center md:text-left">
+              You&#39;re 3 steps away from working with clean, reliable data -
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: FaUpload,
+                  title: "Upload Your Dataset",
+                  desc: "We&#39;ll give you a dedicated SFTP link for secure data transfer."
+                },
+                {
+                  icon: FaCogs,
+                  title: "Let the Experts Take Over",
+                  desc: "Our team starts processing the moment your file lands in the vault. No waiting around."
+                },
+                {
+                  icon: FaDownload,
+                  title: "Get Clean Data in Under 2 Hours",
+                  desc: "You receive a fully-cleaned file plus a quality report, ready to plug into your workflows."
+                }
+              ].map((step, i) => (
+                <div key={i} className="flex flex-col items-center text-center md:items-start md:text-left">
+                  <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-3">
+                    <step.icon className="text-white text-2xl" />
+                  </div>
+                  <h4 className="text-lg font-bold mb-1">{step.title}</h4>
+                  <p className="text-sm">{step.desc}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
