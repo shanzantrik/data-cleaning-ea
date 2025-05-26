@@ -424,19 +424,19 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between p-8 bg-gradient-to-br from-[#dc1b36] via-purple-600 to-[#4361ee] text-white"
+            className="relative rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between p-8 bg-gradient-to-br from-[#dc1b36] via-purple-600 to-[#4361ee] text-white items-center text-center"
             style={{ minHeight: '340px' }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-center md:text-left">How It Works</h3>
-            <p className="text-lg mb-8 text-center md:text-left">
-              You&#39;re 3 steps away from working with clean, reliable data -
+            <h3 className="text-3xl font-bold mb-6 text-center">How It Works</h3>
+            <p className="text-lg mb-8 text-center">
+              You&apos;re 3 steps away from working with clean, reliable data -
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
               {[
                 {
                   icon: FaUpload,
                   title: "Upload Your Dataset",
-                  desc: "We&#39;ll give you a dedicated SFTP link for secure data transfer."
+                  desc: "We&apos;ll give you a dedicated SFTP link for secure data transfer."
                 },
                 {
                   icon: FaCogs,
@@ -449,7 +449,7 @@ export default function Home() {
                   desc: "You receive a fully-cleaned file plus a quality report, ready to plug into your workflows."
                 }
               ].map((step, i) => (
-                <div key={i} className="flex flex-col items-center text-center md:items-start md:text-left">
+                <div key={i} className="flex flex-col items-center text-center">
                   <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-3">
                     <step.icon className="text-white text-2xl" />
                   </div>
