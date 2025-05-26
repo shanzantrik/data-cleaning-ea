@@ -68,8 +68,8 @@ export default function Navbar() {
           <Image src="/logo.png" alt="Express Analytics Logo" width={210} height={60} priority />
         </a>
         {/* Desktop Nav */}
-        <div className="hidden md:flex flex-1 flex-col items-center">
-          <ul className="flex space-x-8 text-[#dc1b36] font-semibold text-lg">
+        <div className="hidden lg:flex flex-1 flex-col items-center">
+          <ul className="flex space-x-4 text-black font-semibold text-lg lg:text-[11px] xl:text-base">
             {sections.map((section) => (
               <li key={section.id}>
                 <button
@@ -77,7 +77,7 @@ export default function Navbar() {
                   className={
                     active === section.id
                       ? 'border-b-2 border-[#dc1b36] pb-1 text-[#dc1b36]'
-                      : 'text-[#dc1b36] opacity-70 hover:opacity-100'
+                      : 'text-black hover:text-[#dc1b36] opacity-90 hover:opacity-100'
                   }
                   style={{ background: 'none', border: 'none', padding: 0, margin: 0, cursor: 'pointer' }}
                 >
@@ -88,7 +88,7 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Desktop Socials */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <a href="https://www.linkedin.com/company/express-analytics" target="_blank" rel="noopener noreferrer" className="text-[#dc1b36] hover:text-[#7a2323] text-2xl">
             <FaLinkedin />
           </a>
@@ -98,7 +98,7 @@ export default function Navbar() {
         </div>
         {/* Hamburger Icon */}
         <button
-          className="md:hidden flex items-center justify-center text-[#dc1b36] text-3xl p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc1b36] transition-all"
+          className="lg:hidden flex items-center justify-center text-[#dc1b36] text-3xl p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc1b36] transition-all"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setMenuOpen((v) => !v)}
         >

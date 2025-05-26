@@ -60,10 +60,10 @@ export default function Home() {
       <BackgroundVisuals />
       <section id="hero" className="relative flex flex-col md:flex-row items-center justify-center min-h-[80vh] bg-[#f5f6fa] overflow-hidden" aria-labelledby="hero-heading">
         <div className="z-10 flex-1 flex flex-col justify-center items-start px-6 md:px-16 py-16">
-          <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 text-[#dc1b36] drop-shadow-lg">
+          <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-transparent bg-clip-text animate-gradient">
             Still Manually Cleaning Data?
           </h1>
-          <h2 className="text-2xl md:text-3xl mb-8 text-[#dc1b36] drop-shadow">
+          <h2 className="text-2xl md:text-3xl mb-8 text-black drop-shadow">
             Let Us Handle 200K Records for $1,000
           </h2>
           <p className="text-xl mb-8 text-[#18181b]">
@@ -83,8 +83,8 @@ export default function Home() {
         {/* Main data cleaning hero image, no overlays */}
         <div className="flex-1 flex items-center justify-center relative w-full h-[400px] md:h-[600px]">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+            initial={{ y: 0 }}
+            animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl rounded-2xl overflow-hidden border border-gray-200"
             style={{ width: '90%', maxWidth: 700, zIndex: 2 }}
@@ -95,7 +95,7 @@ export default function Home() {
               alt="Data Cleaning and Management Hero"
               width={900}
               height={600}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full brightness-110"
               priority
             />
           </motion.div>
@@ -264,8 +264,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <a
-                href="#services"
+              <button
+                onClick={() => setIsPaymentModalOpen(true)}
                 className="inline-flex items-center gap-2 text-[#dc1b36] font-semibold hover:text-[#a31225] transition-colors"
               >
                 <span>To know more about Data Cleaning, check this out!</span>
@@ -282,7 +282,7 @@ export default function Home() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -384,7 +384,7 @@ export default function Home() {
                   </div>
                   <div className="w-full mt-auto">
                     {item.img ? (
-                      <Image
+          <Image
                         src={item.img}
                         alt={item.title || 'Data Cleaning'}
                         width={400}
@@ -535,7 +535,7 @@ export default function Home() {
       {/* Pricing Section - Dark CTA */}
       <section id="pricing" className="w-full bg-[#18181b] py-24 text-white rounded-[20px]">
         <div className="site-container max-w-2xl mx-auto flex flex-col items-center text-center rounded-[20px]">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#dc1b36] mb-6">Ready to Clean Up Your Data (and Your ROI)?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#dc1b36] mb-6">Boost ROI by Cleaning Up Your Data</h2>
           <p className="text-lg mb-4 text-gray-200">Data is the foundation behind every decision you make. If it&#39;s messy, your outcomes will be too.</p>
           <p className="text-lg mb-8 text-gray-400">Don&#39;t let bad data drag you down.</p>
           <div className="bg-[#232326] rounded-2xl shadow-lg p-8 mb-8 w-full">
@@ -562,7 +562,7 @@ function VideoModalTrigger() {
   return (
     <>
       <div className="relative w-full max-w-3xl mx-auto cursor-pointer group mb-2" onClick={() => setOpen(true)}>
-        <Image
+          <Image
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
           alt="Data analytics dashboard preview"
           width={1200}
@@ -627,7 +627,7 @@ function TestimonialSlider({ autoScroll }: { autoScroll?: boolean }) {
   }, [autoScroll, testimonials.length]);
   return (
     <div className="w-full flex flex-col items-center">
-      <Image
+          <Image
         src={testimonials[idx].img}
         alt={testimonials[idx].author}
         width={64}
