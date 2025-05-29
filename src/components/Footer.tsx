@@ -43,7 +43,7 @@ export default function Footer() {
             style={{ minHeight: 120, maxHeight: 180 }}
           ></iframe>
           <div>
-            <h3 className="text-xl font-bold mb-2 text-[#dc1b36]">India Address (PUNE)</h3>
+            <h3 className="text-xl font-bold mb-2 text-[#dc1b36]">India Address</h3>
             <p className="text-gray-200">Workflo, Pride accord building, 2nd floor,<br />Opposite Symantec office, Baner road, Baner, Pune – 411045</p>
             <p className="text-gray-400">info@expressanalytics.com</p>
           </div>
