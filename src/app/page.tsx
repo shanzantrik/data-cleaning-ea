@@ -61,7 +61,6 @@ export default function Home() {
       />
       <CookieConsent />
       {/* Hero Section */}
-      <BackgroundVisuals />
       <section id="hero" className="relative flex flex-col md:flex-row items-center justify-center min-h-[80vh] bg-[#f5f6fa] overflow-hidden" aria-labelledby="hero-heading">
         <div className="z-10 flex-1 flex flex-col justify-center items-start px-6 md:px-16 py-16">
           <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-transparent bg-clip-text animate-gradient">
@@ -702,61 +701,6 @@ function FAQAccordion() {
           </div>
         </div>
       ))}
-    </div>
-  );
-}
-
-// Animated background visuals: moving charts, polygons, and shapes
-function BackgroundVisuals() {
-  // Subtle, low-opacity, animated SVG shapes as a fixed background
-  // Moves on scroll for parallax effect
-  const [scroll, setScroll] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setScroll(window.scrollY);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-  // Parallax offsets
-  const offset1 = scroll * 0.15;
-  const offset2 = scroll * 0.10;
-  const offset3 = scroll * 0.07;
-  return (
-    <div className="pointer-events-none fixed inset-0 z-0 w-full h-full overflow-hidden">
-      <svg width="100vw" height="2000" style={{ position: 'absolute', left: 0, top: 0, width: '100vw', height: '2000px' }}>
-        {/* Polygon */}
-        <polygon
-          points={`${200 + offset1},${100 + offset1} ${350 + offset1},${180 + offset1} ${300 + offset1},${320 + offset1} ${150 + offset1},${250 + offset1}`}
-          fill="#dc1b36"
-          opacity="0.07"
-        />
-        {/* Bar chart shape */}
-        <g transform={`translate(${100 + offset2},${600 + offset2})`} opacity="0.08">
-          <rect x="0" y="40" width="20" height="60" fill="#a259f7" rx="4" />
-          <rect x="30" y="20" width="20" height="80" fill="#18181b" rx="4" />
-          <rect x="60" y="0" width="20" height="100" fill="#dc1b36" rx="4" />
-        </g>
-        {/* Abstract line graph */}
-        <polyline
-          points={`600,${200 + offset3} 650,${180 + offset3} 700,${220 + offset3} 750,${160 + offset3} 800,${210 + offset3}`}
-          fill="none"
-          stroke="#a259f7"
-          strokeWidth="6"
-          opacity="0.09"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
-        {/* More polygons for depth */}
-        <polygon
-          points={`${900 - offset1},${400 + offset2} ${1050 - offset1},${480 + offset2} ${1000 - offset1},${620 + offset2} ${850 - offset1},${550 + offset2}`}
-          fill="#18181b"
-          opacity="0.06"
-        />
-        <polygon
-          points={`${400 + offset3},${900 - offset1} ${600 + offset3},${950 - offset1} ${500 + offset3},${1100 - offset1}`}
-          fill="#a259f7"
-          opacity="0.05"
-        />
-      </svg>
     </div>
   );
 }
