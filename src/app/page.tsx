@@ -224,7 +224,7 @@ export default function Home() {
                 {
                   number: "01",
                   title: "Better, Quicker, Cheaper",
-                  content: "While your team's tied up in spreadsheets, we clean and return your data, in under 2 hours. No distractions. No delays. Just clean, ready-to-use data, delivered fast."
+                  content: "While your team's tied up in spreadsheets, we clean and return your data, at your business speed. No distractions. No delays. Just clean, ready-to-use data, delivered fast."
                 },
                 {
                   number: "02",
@@ -294,7 +294,7 @@ export default function Home() {
                 {
                   title: "Data Deduplication",
                   desc: "Remove repeated entries that mess with analysis and campaign metrics.",
-                  img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+                  img: "/data_duplication.png",
                   color: "bg-white text-black",
                   icon: FaDatabase,
                   link: "#services"
@@ -302,7 +302,7 @@ export default function Home() {
                 {
                   title: "Validation & Standardization",
                   desc: "Bring consistency to names, phone numbers, emails, dates; across records.",
-                  img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+                  img: "/data_quality.png",
                   color: "bg-[#a259f7] text-white",
                   icon: FaCheckCircle,
                   link: "#services"
@@ -310,7 +310,7 @@ export default function Home() {
                 {
                   title: "Missing Value Imputation",
                   desc: "Use proven methods to fill in blanks intelligently, not randomly.",
-                  img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+                  img: "/missing_value.png",
                   color: "bg-[#f72585] text-white",
                   icon: FaChartLine,
                   link: "#services"
@@ -318,7 +318,7 @@ export default function Home() {
                 {
                   title: "Data Quality Report",
                   desc: "You will get a complete report showing what was fixed, cleaned, and enriched, transparency included.",
-                  img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+                  img: "/data_quality.png",
                   color: "bg-black text-white",
                   icon: FaFileAlt,
                   link: "#services"
@@ -326,7 +326,7 @@ export default function Home() {
                 {
                   title: "Error Correction & Formatting",
                   desc: "Fix spelling, punctuation, and field-level issues to make data analysis-ready.",
-                  img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+                  img: "/error_correction.png",
                   color: "bg-[#b5179e] text-white",
                   icon: FaShieldAlt,
                   link: "#services"
@@ -334,7 +334,7 @@ export default function Home() {
                 {
                   title: "Data Enrichment",
                   desc: "Add missing demographic, firmographic, or geolocation data for better targeting.",
-                  img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+                  img: "/data_enrichment.png",
                   color: "bg-[#4361ee] text-white",
                   icon: FaSearch,
                   link: "#services"
@@ -525,7 +525,7 @@ export default function Home() {
           <p className="text-lg mb-8 text-gray-400">Don&#39;t let bad data drag you down.</p>
           <div className="bg-[#232326] rounded-2xl shadow-lg p-8 mb-8 w-full">
             <div className="text-2xl font-bold mb-2 text-white">Clean 200,000 records for just <span className="text-[#dc1b36]">$1,000</span></div>
-            <div className="text-lg text-gray-200 mb-2">Delivered in under 2 hours</div>
+            <div className="text-lg text-gray-200 mb-2">Data solutions that keep pace with tech evolution</div>
             <div className="text-lg text-gray-400 mb-2">Fully secure and confidential</div>
           </div>
           <button
@@ -649,7 +649,7 @@ function FAQAccordion() {
     },
     {
       q: 'What do I get with this plan?',
-      a: 'A cleaned dataset, a comprehensive data quality report, and results delivered in less than 2 hours.'
+      a: 'A cleaned dataset, a comprehensive data quality report, and results that move as fast as your goals.'
     },
     {
       q: 'Why not do this in-house?',

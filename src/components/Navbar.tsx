@@ -69,7 +69,7 @@ export default function Navbar() {
         </a>
         {/* Desktop Nav */}
         <div className="hidden lg:flex flex-1 flex-col items-center">
-          <ul className="flex space-x-8 text-black font-semibold text-[1.15rem] lg:text-[1.05rem] xl:text-[1.18rem]">
+          <ul className="flex space-x-4 text-black font-semibold text-lg lg:text-[11px] xl:text-base">
             {sections.map((section) => (
               <li key={section.id}>
                 <button
