@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Callback Form */}
-        <div id="footer-form" className="w-full md:w-1/2 flex flex-col gap-4 bg-[#232326] rounded-2xl p-6 shadow-lg md:ml-4 mx-auto">
+        <div id="footer-form" className="w-full flex flex-col gap-4 bg-[#232326] rounded-2xl p-6 shadow-lg">
           <h3 className="text-xl font-bold mb-4 text-[#dc1b36]">Request a Callback</h3>
           <div id="hubspot-form" className="flex flex-col gap-4"></div>
           <Script
