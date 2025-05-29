@@ -336,7 +336,7 @@ export default function Home() {
                 },
                 {
                   title: "Data Quality Report",
-                  desc: "You&#39;ll get a complete report showing what was fixed, cleaned, and enriched, transparency included.",
+                  desc: "You will get a complete report showing what was fixed, cleaned, and enriched, transparency included.",
                   img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
                   color: "bg-black text-white",
                   icon: FaFileAlt,
