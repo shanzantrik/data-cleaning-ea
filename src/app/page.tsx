@@ -295,7 +295,7 @@ export default function Home() {
                   title: "Data Deduplication",
                   desc: "Remove repeated entries that mess with analysis and campaign metrics.",
                   img: "/data_duplication.png",
-                  color: "bg-white text-black",
+                  color: "bg-[#d4d3d3] text-black",
                   icon: FaDatabase,
                   link: "#services"
                 },
