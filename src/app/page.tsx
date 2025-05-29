@@ -196,7 +196,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg"
               >
                 <FaGem className="text-white text-2xl animate-bounce" />
-                <span>Talk to Our Data Expert or Schedule a Quick Call</span>
+                <span>Talk to Our Data Experts</span>
               </button>
             </div>
           </motion.div>
@@ -267,25 +267,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <button
-                onClick={() => setIsPaymentModalOpen(true)}
-                className="inline-flex items-center gap-2 text-[#dc1b36] font-semibold hover:text-[#a31225] transition-colors"
-              >
-                <span>To know more about Data Cleaning, check this out!</span>
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
+
             </motion.div>
           </motion.div>
         </div>
@@ -369,13 +351,13 @@ export default function Home() {
                 >
                   <div className="flex flex-col h-full p-6 pb-0">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white/20">
+                      <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-black/20">
                         {item.icon ? <item.icon className="text-2xl" /> : null}
                       </div>
                       <h3 className="text-2xl font-bold leading-tight flex-1">{item.title || ''}</h3>
                     </div>
                     <p className="mb-4 text-base font-medium flex-1">{item.desc}</p>
-                    {item.title === 'Data Deduplication' && (
+                    {/* {item.title === 'Data Deduplication' && (
                       <button
                         onClick={scrollToFooterForm}
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-6 py-3 rounded-lg text-base font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg mb-4"
@@ -383,7 +365,7 @@ export default function Home() {
                         <FaGem className="text-white text-xl animate-bounce" />
                         <span>Start Deduplication</span>
                       </button>
-                    )}
+                    )} */}
                   </div>
                   <div className="w-full mt-auto">
                     {item.img ? (
@@ -439,7 +421,7 @@ export default function Home() {
                 {
                   icon: FaUpload,
                   title: "Upload Your Dataset",
-                  desc: "We&apos;ll give you a dedicated SFTP link for secure data transfer."
+                  desc: "We will give you a dedicated SFTP link for secure data transfer."
                 },
                 {
                   icon: FaCogs,
@@ -448,7 +430,7 @@ export default function Home() {
                 },
                 {
                   icon: FaDownload,
-                  title: "Get Clean Data in Under 2 Hours",
+                  title: "Get Clean Data at the Speed of Your Business",
                   desc: "You receive a fully-cleaned file plus a quality report, ready to plug into your workflows."
                 }
               ].map((step, i) => (

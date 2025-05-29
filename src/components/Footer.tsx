@@ -60,7 +60,7 @@ export default function Footer() {
               if (window.hbspt && window.hbspt.forms) {
                 window.hbspt.forms.create({
                   portalId: '287495',
-                  formId: 'b3d126fc-a405-48e6-bc01-f3397edd5438',
+                  formId: '163b9bfb-3381-4980-802f-88b5ddf5fab1',
                   region: 'na1',
                   target: '#hubspot-form',
                 });
@@ -68,7 +68,7 @@ export default function Footer() {
             }}
           />
           <div className="text-xs text-gray-400 mt-4">
-            Don&#39;t submit a contact form for guest posts. For guest post inquiries, please reach out to <a href="mailto:marketing@expressanalytics.net" className="underline text-[#dc1b36]">marketing@expressanalytics.net</a>
+            Don&#39;t submit a contact form for guest posts. Domains associated with guest posts will be blacklisted.
           </div>
         </div>
       </div>
