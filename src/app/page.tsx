@@ -45,8 +45,12 @@ function CookieConsent() {
 export default function Home() {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
-  const handlePaymentClick = () => {
-    setIsPaymentModalOpen(true);
+  // Scroll to the footer form
+  const scrollToFooterForm = () => {
+    const el = document.getElementById('footer-form');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   };
 
   return (
@@ -67,11 +71,11 @@ export default function Home() {
             Let Us Handle 200K Records for $1,000
           </h2>
           <p className="text-xl mb-8 text-[#18181b]">
-            Get clean, campaign-ready data in under 2 hours, so you can stop scrubbing and start scaling.
+            Precision-Cleaned Data from As Low As 5 cents Delivered at Operational Velocity.
           </p>
           <div>
             <button
-              onClick={handlePaymentClick}
+              onClick={scrollToFooterForm}
               className="flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-[#dc1b36] focus:ring-offset-2"
               aria-label="Claim your discount now"
             >
@@ -132,7 +136,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold mb-8"
           >
-            <span className="text-[#dc1b36]">2 hours</span> could save you <span className="text-[#dc1b36]">thousands</span> on data cleaning
+            <span className="text-[#dc1b36]">Get Clean Data</span> at the Speed of <span className="text-[#dc1b36]">Your Business!</span>
           </motion.h2>
 
           <motion.div
@@ -143,10 +147,10 @@ export default function Home() {
             className="space-y-6 mb-12"
           >
             <p className="text-xl text-gray-200">
-              Your AI is only as smart as your data! Dirty data drains your budget and leads to bad decisions.
+              Your AI is only as smart as your data! Dirty data drains your budget as well as leads to bad decisions.
             </p>
             <p className="text-xl text-gray-200">
-              Poor data leads to poor AI performance, wasted campaigns, and lost revenue. What if data peace of mind cost you less than the cost of a paperclip per record?
+              Poor data leads to poor AI performance, wasted campaigns, and lost revenue. What if data peace of mind cost you less than the cost of a paperclip per record, worth every byte!
             </p>
           </motion.div>
 
@@ -159,19 +163,19 @@ export default function Home() {
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold text-[#dc1b36] mb-4">Clean your 200,000 records for just $1,000</h3>
-              <p className="text-lg text-gray-200 mb-6">That&#39;s $0.005 per record or just 50 cents per 1,000 records.</p>
+              <p className="text-lg text-gray-200 mb-6">Yes, that&#39;s $0.005 per record or just 50 cents per 1,000 records.</p>
               <ul className="space-y-3 text-left max-w-md mx-auto">
                 <li className="flex items-center gap-2 text-gray-200">
                   <span className="text-[#dc1b36]">✓</span>
-                  <span>Get more than just a clean dataset</span>
+                  <span>You get more than just a clean dataset.</span>
                 </li>
                 <li className="flex items-center gap-2 text-gray-200">
                   <span className="text-[#dc1b36]">✓</span>
-                  <span>Get back your time and control</span>
+                  <span>You get back your time. You get back control. You get back clarity.</span>
                 </li>
                 <li className="flex items-center gap-2 text-gray-200">
                   <span className="text-[#dc1b36]">✓</span>
-                  <span>Only 100 spots available</span>
+                  <span>Only 100 spots available. Grab yours before it&#39;s gone</span>
                 </li>
               </ul>
             </div>
@@ -189,11 +193,11 @@ export default function Home() {
             </span>
             <div>
               <button
-                onClick={handlePaymentClick}
+                onClick={scrollToFooterForm}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg"
               >
                 <FaGem className="text-white text-2xl animate-bounce" />
-                <span>Claim Your Discount Now</span>
+                <span>Talk to Our Data Expert or Schedule a Quick Call</span>
               </button>
             </div>
           </motion.div>
@@ -374,7 +378,7 @@ export default function Home() {
                     <p className="mb-4 text-base font-medium flex-1">{item.desc}</p>
                     {item.title === 'Data Deduplication' && (
                       <button
-                        onClick={handlePaymentClick}
+                        onClick={scrollToFooterForm}
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-6 py-3 rounded-lg text-base font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg mb-4"
                       >
                         <FaGem className="text-white text-xl animate-bounce" />
@@ -405,7 +409,7 @@ export default function Home() {
               className="text-center"
             >
               <button
-                onClick={handlePaymentClick}
+                onClick={scrollToFooterForm}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg"
               >
                 <FaGem className="text-white text-2xl animate-bounce" />
@@ -470,7 +474,7 @@ export default function Home() {
           <p className="text-md text-gray-600 mb-8">Watch this quick video to see how companies are turning messy spreadsheets into revenue generators:</p>
           <VideoModalTrigger />
           <button
-            onClick={handlePaymentClick}
+            onClick={scrollToFooterForm}
             className="mt-8 inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg"
           >
             <FaGem className="text-white text-2xl animate-bounce" />
@@ -544,7 +548,7 @@ export default function Home() {
             <div className="text-lg text-gray-400 mb-2">Fully secure and confidential</div>
           </div>
           <button
-            onClick={handlePaymentClick}
+            onClick={scrollToFooterForm}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg mb-4"
           >
             <FaGem className="text-white text-2xl animate-bounce" />

@@ -32,3 +32,107 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* HubSpot Form Custom Styles for Footer */
+#hubspot-form .hs-form input,
+#hubspot-form .hs-form textarea,
+#hubspot-form .hs-form select {
+  background: #18181b !important;
+  color: #fff !important;
+  border: 1.5px solid #fff !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#hubspot-form .hs-form input::placeholder,
+#hubspot-form .hs-form textarea::placeholder {
+  color: #d8d8d8 !important;
+  opacity: 1 !important;
+}
+
+#hubspot-form .hs-form .actions input[type="submit"] {
+  background: linear-gradient(90deg, #dc1b36 0%, #a259f7 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  padding: 0.75rem 2rem !important;
+  box-shadow: 0 2px 8px 0 #0002 !important;
+  margin-top: 0.5rem !important;
+  transition: background 0.2s;
+  min-width: 180px;
+  display: inline-block;
+}
+
+#hubspot-form .hs-form .actions input[type="submit"]:hover {
+  background: linear-gradient(90deg, #a31225 0%, #7c3aed 100%) !important;
+}
+
+#hubspot-form .hs-form label {
+  color: #fff !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+#hubspot-form .hs-form .hs-error-msg {
+  color: #dc1b36 !important;
+  font-size: 0.95rem !important;
+  margin-top: -0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+#hubspot-form .hs-form fieldset {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#hubspot-form .hs-form .hs-form-required {
+  color: #dc1b36 !important;
+}
+
+/* Two-column layout for HubSpot form fields on desktop */
+#hubspot-form .hs-form .hs-form-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#hubspot-form .hs-form .input,
+#hubspot-form .hs-form .hs-input {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #hubspot-form .hs-form .hs-form-field {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2%;
+  }
+
+  #hubspot-form .hs-form .hs-form-field:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  #hubspot-form .hs-form .hs-form-field {
+    margin-bottom: 1.5rem !important;
+  }
+
+  #hubspot-form .hs-form .actions {
+    width: 100%;
+    display: block;
+    clear: both;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #hubspot-form .hs-form .hs-form-field {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+  }
+}
