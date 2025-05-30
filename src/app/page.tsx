@@ -61,8 +61,8 @@ export default function Home() {
       />
       <CookieConsent />
       {/* Hero Section */}
-      <section id="hero" className="relative flex flex-col md:flex-row items-center justify-center min-h-[80vh] bg-[#f5f6fa] overflow-hidden" aria-labelledby="hero-heading">
-        <div className="z-10 flex-1 flex flex-col justify-center items-start px-6 md:px-16 py-16">
+      <section id="hero" className="relative flex flex-col md:flex-row items-center justify-center min-h-[80vh] bg-[#f5f6fa] overflow-hidden gap-8 md:gap-0" aria-labelledby="hero-heading">
+        <div className="z-10 flex-1 flex flex-col justify-center items-start px-6 md:px-16 py-16 mb-8 md:mb-0">
           <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-transparent bg-clip-text animate-gradient">
             Still Manually Cleaning Data?
           </h1>
@@ -72,7 +72,7 @@ export default function Home() {
           <p className="text-xl mb-8 text-[#18181b]">
             Precision-Cleaned Data from As Low As 5 cents Delivered at Operational Velocity.
           </p>
-          <div>
+          <div className="w-full mb-8 md:mb-0">
             <button
               onClick={scrollToFooterForm}
               className="flex items-center gap-2 bg-gradient-to-r from-[#dc1b36] to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:from-[#a31225] hover:to-purple-800 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-[#dc1b36] focus:ring-offset-2"
