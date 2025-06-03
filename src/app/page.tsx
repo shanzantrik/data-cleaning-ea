@@ -176,7 +176,7 @@ export default function Home() {
             >
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-[#dc1b36] mb-4">Clean your 200,000 records for just $1,000</h3>
-                <p className="text-lg text-gray-200 mb-6">Yes, that&#39;s $0.005 per record or just 50 cents per 1,000 records.</p>
+                <p className="text-lg text-gray-200 mb-6">Yes, that&#39;s $0.005 per record or just 50 cents per 100 records.</p>
                 <ul className="space-y-3 text-left max-w-md mx-auto">
                   <li className="flex items-center gap-2 text-gray-200">
                     <span className="text-[#dc1b36]">✓</span>
